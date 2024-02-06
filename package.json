@@ -1,0 +1,20 @@
+{
+  "name": "prypractica1",
+  "version": "1.0.0",
+  "description": "\"# pryPractica1\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ROMA",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ROMA17N/pryPractica1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ROMA17N/pryPractica1/issues"
+  },
+  "homepage": "https://github.com/ROMA17N/pryPractica1#readme"
+}
