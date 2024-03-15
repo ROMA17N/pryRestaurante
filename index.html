@@ -1,114 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Restaurante DeliTic´s</title>
-    <link rel="icon" href="src/assets/Icono.png">
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidad con IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escalabilidad en dispositivos móviles -->
+
+    <!-- Enlaces a recursos externos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Hoja de estilos de iconos -->
+    <title>Restaurante DeliTic´s</title> <!-- Título de la página -->
+    <link rel="icon" href="src/assets/Icono.png"> <!-- Ícono de la pestaña del navegador -->
+    <link rel="stylesheet" href="src/css/style.css" /> <!-- Hoja de estilos personalizada -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Hoja de estilos de Bootstrap -->
 
 </head>
+
 <body>
- <div class="wrapper">
-    <nav class="nav">
-        <div class="nav-logo">
-            <p> Restaurante DeliTic´s!! </p>
-            <figure>
-                <img src="src/assets/Icono.png" class="comics" alt="...">
-              </figure>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                <li><a href="#" class="link">Menu - Platillos</a></li>
-                <li><a href="#" class="link">Reservaciones</a></li>
-                <li><a href="#" class="link">Acerca de nosotros!!</a></li>
-            </ul>
-        </div>
-        <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Acceder</button>
-            <button class="btn" id="registerBtn" onclick="register()">Registrarse</button>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
+    <!-- Contenedor principal -->
+    <div class="wrapper">
+        <!-- Barra de navegación -->
+        <nav class="nav">
+            <!-- Logo y título de la barra de navegación -->
+            <div class="nav-logo">
+                <p> Restaurante DeliTic´s!! </p>
+                <figure>
+                    <img src="src/assets/Icono.png" class="comics" alt="...">
+                </figure>
+            </div>
+            <!-- Menú de navegación -->
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <!-- Enlaces del menú -->
+                    <li><a href="#" class="link active">Home</a></li>
+                    <li><a href="#" class="link">Menu - Platillos</a></li>
+                    <li><a href="#" class="link">Reservaciones</a></li>
+                    <li><a href="#" class="link">Acerca de nosotros!!</a></li>
+                </ul>
+            </div>
+            <!-- Botones de acceso y registro -->
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Acceder</button>
+                <button class="btn" id="registerBtn" onclick="register()">Registrarse</button>
+            </div>
+            <!-- Botón de menú para dispositivos móviles -->
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
 
-<!----------------------------- Form box ----------------------------------->    
-    <div class="form-box">
-        
-        <!------------------- login form -------------------------->
+        <!--  --------------------Contenedor de formularios------------------------- -->
+        <div class="form-box">
 
-        <div class="login-container" id="login">
-            <div class="top">
-                <span>¿Quieres Registrarte? <a href="#" onclick="register()">Registrarse</a></span>
-                <header>Login</header>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Username or Email">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Sign In">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="login-check">
-                    <label for="login-check">Guardar Acceso!!</label>
+            <!-- Formulario de inicio de sesión -->
+            <div class="login-container" id="login">
+                <!-- Encabezado y enlace para registro -->
+                <div class="top">
+                    <span>¿Quieres Registrarte? <a href="#" onclick="register()">Registrarse</a></span>
+                    <header>Login</header>
                 </div>
-                <div class="two">
-                    <label><a href="#">Olvidaste tu contraseña ?!</a></label>
-                </div>
-            </div>
-        </div>
-
-        <!------------------- registration form -------------------------->
-        <div class="register-container" id="register">
-            <div class="top">
-                <span>Tienes una cuenta!? <a href="#" onclick="login()">Acceder</a></span>
-                <header>Registrarse</header>
-            </div>
-            <div class="two-forms">
+                <!-- Campos de entrada de datos -->
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname">
+                    <input type="text" class="input-field" placeholder="Username or Email">
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname">
-                    <i class="bx bx-user"></i>
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Botón de inicio de sesión -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+                <!-- Opciones adicionales -->
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check">Guardar Acceso!!</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Olvidaste tu contraseña ?!</a></label>
+                    </div>
                 </div>
             </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Register">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="register-check">
-                    <label for="register-check"> Guardar Acceso!!</label>
+
+            <!--  =========================== Formulario de registro =========================== -->
+            <div class="register-container" id="register">
+                <!-- Encabezado y enlace para inicio de sesión -->
+                <div class="top">
+                    <span>Tienes una cuenta!? <a href="#" onclick="login()">Acceder</a></span>
+                    <header>Registrarse</header>
                 </div>
-                <div class="two">
-                    <label><a href="#">Terminos & condiciones</a></label>
+                <!-- Campos de entrada de datos -->
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Botón de registro -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+                <!-- Opciones adicionales -->
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Guardar Acceso!!</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Terminos & condiciones</a></label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>   
+    <!-- Script de JavaScript -->
     <script src="src/js/code.js"></script>
 
 </body>
+
 </html>
