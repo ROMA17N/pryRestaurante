@@ -5,15 +5,18 @@
     <!-- Metadatos del documento -->
     <meta charset="UTF-8"> <!-- Codificación de caracteres -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidad con IE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escalabilidad en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Escalabilidad en dispositivos móviles -->
 
     <!-- Enlaces a recursos externos -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Hoja de estilos de iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Hoja de estilos de iconos -->
     <title>Restaurante DeliTic´s</title> <!-- Título de la página -->
     <link rel="icon" href="src/assets/Icono.png"> <!-- Ícono de la pestaña del navegador -->
     <link rel="stylesheet" href="src/css/style.css" /> <!-- Hoja de estilos personalizada -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Hoja de estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Hoja de estilos de Bootstrap -->
 
 </head>
 
@@ -26,10 +29,11 @@
             <div class="nav-logo">
                 <p> Restaurante DeliTic´s!! </p>
                 <figure>
-                    <img src="src/assets/Icono.png" class="comics" alt="...">
+                    <img src="src/assets/imagen2.png" class="comics" alt="...">
                 </figure>
             </div>
             <!-- Menú de navegación -->
+
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <!-- Enlaces del menú -->
@@ -39,11 +43,16 @@
                     <li><a href="#" class="link">Acerca de nosotros!!</a></li>
                 </ul>
             </div>
+
+
             <!-- Botones de acceso y registro -->
             <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="login()">Acceder</button>
                 <button class="btn" id="registerBtn" onclick="register()">Registrarse</button>
             </div>
+
+
+
             <!-- Botón de menú para dispositivos móviles -->
             <div class="nav-menu-btn">
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>
@@ -60,19 +69,43 @@
                     <span>¿Quieres Registrarte? <a href="#" onclick="register()">Registrarse</a></span>
                     <header>Login</header>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Campos de entrada de datos -->
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Username or Email">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <!-- Botón de inicio de sesión -->
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Sign In">
-                </div>
+
+                <form id="frmDatosPersonales"></form>
+                <form id="loginForm" method="post">
+                    <div class="input-box" id="loginResponse">
+                        <input type="text" class="input-field" placeholder="Username or Email"  id="txtUsuario" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+
+                    <div class="input-box"> 
+                        <input type="password" class="input-field" placeholder="Password" id="txtPass" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <!-- Botón de inicio de sesión -->
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In">
+                    </div>
+                </form id="respondLoging" >
+
+
+
+
+
+
+
+
                 <!-- Opciones adicionales -->
                 <div class="two-col">
                     <div class="one">
@@ -129,7 +162,7 @@
         </div>
     </div>
     <!-- Script de JavaScript -->
-    <script src="src/js/code.js"></script>
+    <script src="src/js/dom.js"></script>
 
 </body>
 

@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 .comics {
-    width: 20%;
+    width: 60%;
     margin: 15%;
-    margin-top: -10%;
+    margin-top: -20%;
 
 }
 
@@ -150,11 +150,13 @@ body {
 }
 
 /* Estilos de texto superior en formularios */
+
+
 .top span {
     color: #fff;
     font-size: small;
     padding: 10px 0;
-    display: flex;
+    display: x;
     justify-content: center;
 }
 
@@ -274,6 +276,7 @@ header {
         transition: .3s;
     }
 
+
     .nav-menu ul {
         flex-direction: column;
         text-align: center;
@@ -296,10 +299,16 @@ header {
     .nav-menu-btn i:hover {
         background: rgba(255, 255, 255, 0.15);
     }
+    .comics {
+        width: 20%;
+        margin: 6%;
+        margin-top: -30%;
+
+    }   
 }
 
 /* Estilos adicionales para pantallas pequeñas */
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 410px) {
     .wrapper {
         min-height: 100vh;
     }
@@ -319,4 +328,104 @@ header {
         flex-direction: column;
         gap: 0;
     }
+
+
+    .comics {
+        width: 20%;
+        margin: 6%;
+        margin-top: -30%;
+
+    }
+
+    .nav-menu {
+        position:absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 60%;
+        height: 75vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+
+    
+    .nav-button {
+        display: none;
+    }
+
+    .nav-menu.responsive {
+        top: 100px;
+    }
+
+    /* --------------------------------- */
+
+    .nav-menu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu-btn {
+        display: block;
+    }
+
+    .nav-menu-btn i {
+        margin: 250%;
+        margin-block: 600%;
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.403);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .nav-menu-btn i:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+    .comics {
+        width: 20%;
+        margin: 6%;
+        margin-top: -30%;
+
+    }   
+
+
+
+}
+
+
+/* ===================================================================================================================================*/
+#p1 {
+    background-color: aqua;
+    color: rgba(19, 15, 125, 0.757);
+
+}
+
+.text {
+
+    width: 35%;
+    margin: 15%;
+    margin-top: -30%;
+    background-color: brown;
+    border: 2px;
+    width: 50%;
+    height: 20%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#comics {
+    width: 35%;
+    margin: 15%;
+    margin-top: -20%;
+
+}
+
+.divByID {
+    background-color: burlywood;
+    width: 50%;
+    height: auto;
+    border-style: dotted;
+    border: 2px;
 }

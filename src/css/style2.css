@@ -1,0 +1,77 @@
+/* Importación de la fuente Poppins desde Google Fonts */
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.comics {
+    width: 60%;
+    margin: 15%;
+    margin-top: -20%;
+
+}
+
+/* Estilos específicos del cuerpo */
+
+body {
+    /* Definición de una imagen de fondo con propiedades específicas */
+    background: url("https://static.vecteezy.com/system/resources/previews/022/130/611/non_2x/hand-drawing-design-of-mexican-food-tacos-free-vector.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    /* Impide el desplazamiento del fondo con el contenido */
+}
+
+
+/* ===================================================================================================================================*/
+#p1{
+    background-color: aqua;
+    color: rgba(19, 15, 125, 0.757);
+
+}
+
+.marge{
+
+    margin: 2%;
+
+
+}
+.btn.white-btn {
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30%;
+    margin-top: -4%;  
+}
+
+.form{
+    background: rgba(255, 255, 255, 0.637);
+    margin-top: -29%;     
+}
+
+.cuerpoT{
+    justify-content: center;
+	align-items: center;
+    text-align: center;
+  
+}
+
+
+
+#comics{
+    width: 35%;
+    margin: 15%;
+    margin-top: -20%;
+   
+}
+
+.titles{
+    margin: 1.1%;
+    font: oblique bold 120% cursive;
+    font-size: 280%;
+    text-align: center;
+}
+.divByID{
+    background-color: burlywood;
+    width: 50%;
+    height: auto;
+    border-style: dotted;
+    border: 2px;
+}
