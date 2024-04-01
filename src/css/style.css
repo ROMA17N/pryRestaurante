@@ -2,6 +2,11 @@
 /* POPPINS FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+.error-message {
+    margin-top: 10px; /* Agregar un margen superior para separar el mensaje del formulario */
+    font-size: 14px; /* Ajustar el tamaño de fuente del mensaje */
+}
+
 .comics {
     width: 60%;
     margin: 15%;
