@@ -35,12 +35,44 @@
           <input type="text" id="txtApellidos" name="txtApellidos" required>
         </label>
       </label>
+
       <label class="marge">
+        <label class="shadow-lg p-3 mb-5 bg-body rounded">
+          <label for="txtNacionalidad">Nacionalidad:</label>
+          <select name="txtNacionalidad" id="txtNacionalidad" required>
+            <option value=""></option>
+            <option value="Mexicano">Mexicano</option>
+            <option value="Britanico">Britanico</option>
+            <option value="Chileno">Chileno</option>
+            <option value="EstadoUnidense">EstadoUnidense</option>
+            <option value="Chino">Chino</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </label>
+      </label>
+      <div class="marge">
         <label class="shadow-lg p-3 mb-5 bg-body rounded">
           <label for="txtEdad">Edad del Empleado:</label>
           <input type="number" id="txtEdad" name="txtEdad" required>
-        </label>
+        </label>    
+      <label class="marge">
+        <label class="shadow-lg p-3 mb-5 bg-body rounded">
+        <label for="txtFecha">Fecha de Actualizacion datos</label>
+        <input type="date" name="txtFecha" id="txtFecha">
       </label>
+      </label>
+</div>
+
+      <div class="marge">
+        <label class="shadow-lg p-3 mb-5 bg-body rounded">
+          <h2 class="titles" id="txtOcupacion">Ocupacion:</h2>
+          <label><input type="checkbox" value="cocinero" id="txtOcupacion" name="txtOcupacion"> Cocinero</label required><br>
+          <label><input type="checkbox" value="camarero" id="txtOcupacion" name="txtOcupacion"> Camarero</label><br>
+          <label><input type="checkbox" value="limpiador" id="txtOcupacion" name="txtOcupacion"> Limpiador</label><br>
+          <label><input type="checkbox" value="gerente" id="txtOcupacion" name="txtOcupacion"> Gerente</label><br>
+          <label><input type="checkbox" value="repartidor" id="txtOcupacion" name="txtOcupacion"> Repartidor</label><br>
+        </label>
+      </div>
       <div>
         <button type="submit" class="btn white-btn">Agregar Datos</button>
       </div>
@@ -56,6 +88,9 @@
             <th scope="col" class="cuerpoT">Nombre Empleado</th>
             <th scope="col" class="cuerpoT">Apellido Empleado</th>
             <th scope="col" class="cuerpoT">Edad Empleado</th>
+            <th scope="col" class="cuerpoT">Nacionalidad</th>
+            <th scope="col" class="cuerpoT">Ocupacion</th>
+            <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
             <th scope="col" class="cuerpoT">Acciones</th>
           </tr>
         </thead>

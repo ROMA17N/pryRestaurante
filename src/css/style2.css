@@ -17,7 +17,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
     /* Impide el desplazamiento del fondo con el contenido */
 }
 
@@ -31,10 +30,11 @@ body {
 
 .marge{
 
-    margin: 2%;
+    margin: 1%;
 
 
 }
+
 .btn.white-btn {
     background: rgba(255, 255, 255, 0.7);
     margin: 30%;
@@ -75,3 +75,4 @@ body {
     border-style: dotted;
     border: 2px;
 }
+

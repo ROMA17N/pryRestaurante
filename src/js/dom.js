@@ -9,9 +9,15 @@ frmDatosPersonales.addEventListener("submit", function (event){
 
         event.preventDefault();
 
+
+
         const txtNombre=document.getElementById("txtNombre").value;
         const txtApellidos=document.querySelector("#txtApellidos").value;
         const txtEdad=document.getElementById("txtEdad").value;
+        const txtNacionalidad=document.getElementById("txtNacionalidad").value;
+        const txtOcupacion=document.querySelector(`input[name="txtOcupacion"]:checked`).value;
+        const txtFecha = document.getElementById("txtFecha").value;
+       
     
 
         //crear Fila
@@ -23,6 +29,9 @@ frmDatosPersonales.addEventListener("submit", function (event){
         const celdaApellidos = document.createElement("td");
         const celdaEdad = document.createElement("td");
         const celdaAcciones = document.createElement("td");
+        const celdaNacionalidad = document.createElement("td")
+        const celdaOcupacion = document.createElement("td");
+        const celdaFecha = document.createElement("td");
 
         const divBotones = createBotones();
         //Aniadir en las celdad valores de las cajas de texto
@@ -30,6 +39,9 @@ frmDatosPersonales.addEventListener("submit", function (event){
         celdaNombre.textContent = txtNombre;
         celdaApellidos.textContent = txtApellidos;
         celdaEdad.textContent = txtEdad;
+        celdaNacionalidad.textContent = txtNacionalidad;
+        celdaOcupacion.textContent = txtOcupacion;
+        celdaFecha.textContent = txtFecha;
         celdaAcciones.appendChild(divBotones);
 
         //Aniadir las celdas a la fila 
@@ -37,8 +49,12 @@ frmDatosPersonales.addEventListener("submit", function (event){
         fila.appendChild(celdaNombre);
         fila.appendChild(celdaApellidos);
         fila.appendChild(celdaEdad);
+        fila.appendChild(celdaNacionalidad);
+        fila.appendChild(celdaOcupacion);
+        fila.appendChild(celdaFecha);
         fila.appendChild(celdaAcciones);
 
+ 
         //Agregar la fila al cuerpo de la tabla
         document.getElementById("cuerpoTabla").appendChild(fila);
         //limpiar el formulario
