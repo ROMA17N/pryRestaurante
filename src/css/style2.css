@@ -14,7 +14,8 @@
 body {
     /* Definición de una imagen de fondo con propiedades específicas */
     background: url("https://static.vecteezy.com/system/resources/previews/022/130/611/non_2x/hand-drawing-design-of-mexican-food-tacos-free-vector.jpg");
-    background-size: cover;
+    /*background: url("https://i.pinimg.com/736x/2a/96/ae/2a96aeef4e5845c52cc2ad25be57a658.jpg");
+    */background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* Impide el desplazamiento del fondo con el contenido */
@@ -76,3 +77,50 @@ body {
     border: 2px;
 }
 
+/*-----------------------------*/
+.divTextContend {
+    width: 40%;
+    height: auto;
+    background-color: rgb(233, 15, 146);
+  }
+  
+  .divInnerHTML {
+    width: 40%;
+    height: auto;
+    background-color: rgb(172, 123, 9);
+  }
+  
+  .t1 {
+    border: 2px;
+    border-style: solid;
+  }
+  
+  .fade-in{
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .fade-out{
+    animation: fadeOut 1s forwards;
+  }
+  
+  @keyframes fadeIn{
+    from{
+      opacity: 0;
+    } to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut{
+    from{
+      opacity: 1;
+    } to {
+      opacity: 0;
+    }
+  }
+  
+  #valoresTabla {
+    display: none;
+  }
+  
