@@ -396,9 +396,9 @@ document.getElementById('frmBuscar').addEventListener('submit', (event) => {
         console.log("BD: " + dbSession.length);
 
         if (datosPersona !== undefined) {
-                const divTabla = document.getElementById('valoresTabla');
+                const divTabla = document.getElementById('valoresTa');
                 divTabla.style.display = 'block';
-                document.getElementById('cuerpoTabla').textContent = "";
+                document.getElementById('cuerpoTa').textContent = "";
                 const fila = document.createElement('tr');
 
                 const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
@@ -416,14 +416,16 @@ document.getElementById('frmBuscar').addEventListener('submit', (event) => {
 
                 // agregar la fila a la tabla
 
-                document.getElementById("cuerpoTabla").appendChild(fila);
+                document.getElementById("cuerpoTa").appendChild(fila);
+                mostrarAlerta('Persona Encontrada', 'alert alert-success');
+
 
         } else if (dbSession.length === 0) {
                 mostrarAlerta('La base de datos esta vacia', 'alert alert-danger');
-                ocultarTabla();
+                document.getElementById('valoresTa').style.display = 'none';
         } else {
                 mostrarAlerta('No se encontro la persona', 'alert alert-danger');
-                ocultarTabla();
+                document.getElementById('valoresTa').style.display = 'none';
         }
         // limpar los campos del formulario
         document.querySelector("#frmBuscar").reset();
@@ -484,6 +486,7 @@ function buscarId(id, db) {
 function ocultarTabla() {
         document.getElementById('valoresTabla').style.display = 'none';
 }
+
 
 //=============================================================================================================
 // Función para manejar el menú responsivo
@@ -714,6 +717,7 @@ function mostrarFormulario(opcion) {
 
         } else if (opcion === 'buscar') {
                 document.getElementById('formularioBuscar').style.display = 'block';
+                document.getElementById('valoresTa').style.display = 'none';
         } else if (opcion === 'EliminarDB') {
                 const db = objDataManager.read();
                 if (db.length !== 0) {

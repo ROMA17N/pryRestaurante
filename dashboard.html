@@ -128,6 +128,26 @@
 
         </label>
       </Form>
+      
+      <div id='valoresTa' class="form" style="display: none;"  >
+        <table class="table" >
+          <thead>
+            <tr>
+              <th scope="col" class="cuerpoT">#Empleado</th>
+              <th scope="col" class="cuerpoT">Nombre Empleado</th>
+              <th scope="col" class="cuerpoT">Apellido Empleado</th>
+              <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Nacionalidad</th>
+              <th scope="col" class="cuerpoT">Ocupacion</th>
+              <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
+              <th scope="col" class="cuerpoT">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTa" class="cuerpoT" >
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
     <div id="formularioEliminarPersonaPorId" style="display: none;">
@@ -136,17 +156,19 @@
           <div class="shadow-lg p-3 mb-5 bg-body rounded">
             <label for="txtDelete">Eliminar Persona por ID:</label>
             <input type="number" name="delete" id="delete" required>
-          </label>
+          </div>
           <button type="submit" id="btnDelete" class="btn white-btn"> Eliminar persona</button>
+        </label>
         </label>
       </Form>
     </div>
+
     <div id="responsInformation" style="display: none;"></div>
 
-    <form id="loginForm"></form>
     <!-- =========================================    -->
     <div id="formularioMostrar" style="display: none;">
-      <div id='valoresTabla' class="form">
+      <div id='valoresTabla' style="background: rgba(255, 255, 255, 0.637);
+      ">
         <table class="table">
           <thead>
             <tr>
@@ -164,7 +186,11 @@
           </tbody>
         </table>
       </div>
+    </div>
+
   </section>
+  <form id="loginForm"></form>
+
   <script src="src/js/dom.js"></script>
 
 
