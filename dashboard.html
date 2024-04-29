@@ -16,92 +16,202 @@
   <link rel="stylesheet" href="src/css/style2.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 
 <body>
-<h1 class="titles">Registro de Empleado:</h1>
+  <h1 class="titles">Registro de Empleado:</h1>
+  <!-- --------------------------------------------------------- -->
+  <label class="marge">
+    <label class="shadow-lg p-3 mb-5 bg-body rounded">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="mostrarFormulario('agregar')">Agregar
+            Empleado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar')">Mostrar Empleados</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar')">Buscar Id Empleado</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar')">Eliminar Base de Datos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId')">Elimina Persona por ID</a>
+        </li>
+      </ul>
+    </label>
+  </label>
+  <!-- --------------------------------------------------------- -->
+
   <section>
-    <form id="frmDatosPersonales">
-      <label class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-          <label for="txtNombre">Nombre del Empleado:</label>
-          <input type="text" id="txtNombre" name="txtNombre" required>
+    <div id="frmAgregar" style="display: none;">
+      <form id="frmDatosPersonales">
+        <label class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="inPersona">Id</label>
+            <input type="idPersona" name="idPersona" id="idPersona" required>
+          </label>
         </label>
-      </label>
-      <label class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-          <label for="txtApellidos">Apellidos del Empleado:</label>
-          <input type="text" id="txtApellidos" name="txtApellidos" required>
-        </label>
-      </label>
 
-      <label class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-          <label for="txtNacionalidad">Nacionalidad:</label>
-          <select name="txtNacionalidad" id="txtNacionalidad" required>
-            <option value=""></option>
-            <option value="Mexicano">Mexicano</option>
-            <option value="Britanico">Britanico</option>
-            <option value="Chileno">Chileno</option>
-            <option value="EstadoUnidense">EstadoUnidense</option>
-            <option value="Chino">Chino</option>
-            <option value="Otro">Otro</option>
-          </select>
+        <label class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtNombre">Nombre del Empleado:</label>
+            <input type="text" id="txtNombre" name="txtNombre" required>
+          </label>
         </label>
-      </label>
-      <div class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-          <label for="txtEdad">Edad del Empleado:</label>
-          <input type="number" id="txtEdad" name="txtEdad" required>
-        </label>    
-      <label class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-        <label for="txtFecha">Fecha de Actualizacion datos</label>
-        <input type="date" name="txtFecha" id="txtFecha">
-      </label>
-      </label>
-</div>
+        <label class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtApellidos">Apellidos del Empleado:</label>
+            <input type="text" id="txtApellidos" name="txtApellidos" required>
+          </label>
+        </label>
 
-      <div class="marge">
-        <label class="shadow-lg p-3 mb-5 bg-body rounded">
-          <h2 class="titles" id="txtOcupacion">Ocupacion:</h2>
-          <label><input type="checkbox" value="cocinero" id="txtOcupacion" name="txtOcupacion"> Cocinero</label required><br>
-          <label><input type="checkbox" value="camarero" id="txtOcupacion" name="txtOcupacion"> Camarero</label><br>
-          <label><input type="checkbox" value="limpiador" id="txtOcupacion" name="txtOcupacion"> Limpiador</label><br>
-          <label><input type="checkbox" value="gerente" id="txtOcupacion" name="txtOcupacion"> Gerente</label><br>
-          <label><input type="checkbox" value="repartidor" id="txtOcupacion" name="txtOcupacion"> Repartidor</label><br>
+        <label class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtNacionalidad">Nacionalidad:</label>
+            <select name="txtNacionalidad" id="txtNacionalidad" required>
+              <option value=""></option>
+              <option value="Mexicano">Mexicano</option>
+              <option value="Britanico">Britanico</option>
+              <option value="Chileno">Chileno</option>
+              <option value="EstadoUnidense">EstadoUnidense</option>
+              <option value="Chino">Chino</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
         </label>
-      </div>
-      <div>
+        <div class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtEdad">Edad del Empleado:</label>
+            <input type="number" id="txtEdad" name="txtEdad" required>
+          </label>
+          <label class="marge">
+            <label class="shadow-lg p-3 mb-5 bg-body rounded">
+              <label for="txtFecha">Fecha de Actualizacion datos</label>
+              <input type="date" name="txtFecha" id="txtFecha">
+            </label>
+          </label>
+        </div>
+        <div class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <h2 class="titles" id="txtOcupacion">Ocupacion:</h2>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="cocinero"
+                required>
+              <label class="form-check-label" for="exampleRadios1">
+                Cocinero
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="camarero">
+              <label class="form-check-label" for="exampleRadios1">
+                Camarero
+              </label required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="limpiador">
+              <label class="form-check-label" for="exampleRadios1">
+                Limpiador
+              </label required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="gerente">
+              <label class="form-check-label" for="exampleRadios1">
+                Gerente
+              </label required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="repartidor">
+              <label class="form-check-label" for="exampleRadios1">
+                Repartidor
+              </label required>
+            </div>
+          </label>
+
+        </div>
         <button type="submit" class="btn white-btn">Agregar Datos</button>
+        <div>
+        </div>
+      </form>
+      <form id="loginForm"></form>
+
+    </div>
+
+    <div id="eliminarBD" style="display: none;"></div>
+    <!-- =========================================    -->
+    <div id="Buscar" style="display: none;">
+      <Form id="frmBuscar">
+        <label class="marge">
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtIdPersona">Id Persona:</label>
+            <input type="number" name="tftIdPersona" id="txtIdPersona" required>
+          </label> <button type="submit" id="btnBuscar" class="btn white-btn"> Buscar por Id</button>
+        </label>
+      </Form>
+
+      <div id='valoresTa' class="form" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="cuerpoT">#Empleado</th>
+              <th scope="col" class="cuerpoT">Nombre Empleado</th>
+              <th scope="col" class="cuerpoT">Apellido Empleado</th>
+              <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Nacionalidad</th>
+              <th scope="col" class="cuerpoT">Ocupacion</th>
+              <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
+              <th scope="col" class="cuerpoT">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTa" class="cuerpoT">
+          </tbody>
+        </table>
       </div>
-    </form id="respondLoging">
+    </div>
 
+    <div id="eliminarId" style="display: none;">
+      <Form id="frmDelete">
+        <label class="marge">
+          <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtDelete">Eliminar Persona por ID:</label>
+            <input type="number" name="delete" id="delete" required>
+          </div>
+          <button type="submit" id="btnDelete" class="btn white-btn"> Eliminar persona</button>
+        </label>
+        </label>
+      </Form>
+    </div>
+    <!-- =========================================    -->
+    <div id="frmMostrar" style="display: none;">
+      <div id='valoresTabla' style="background: rgba(255, 255, 255, 0.637);">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="cuerpoT">#Empleado</th>
+              <th scope="col" class="cuerpoT">Nombre Empleado</th>
+              <th scope="col" class="cuerpoT">Apellido Empleado</th>
+              <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Nacionalidad</th>
+              <th scope="col" class="cuerpoT">Ocupacion</th>
+              <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
+              <th scope="col" class="cuerpoT">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla" class="cuerpoT">
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-    <form id="loginForm"></form>
-    <div div="valoresTabla" class="form">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col" class="cuerpoT">#Empleado</th>
-            <th scope="col" class="cuerpoT">Nombre Empleado</th>
-            <th scope="col" class="cuerpoT">Apellido Empleado</th>
-            <th scope="col" class="cuerpoT">Edad Empleado</th>
-            <th scope="col" class="cuerpoT">Nacionalidad</th>
-            <th scope="col" class="cuerpoT">Ocupacion</th>
-            <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
-            <th scope="col" class="cuerpoT">Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="cuerpoTabla" class="cuerpoT">
-        
+    <img id="miGif" src="" alt="GIF" style="display: none;">
 
   </section>
+  <label id="responsInformation" style="display: none;"></label>
+
+  <form id="loginForm"></form>
   <script src="src/js/dom.js"></script>
-
-
-
 </body>
 
 </html>

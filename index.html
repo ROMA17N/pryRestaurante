@@ -43,8 +43,7 @@
                     <li><a href="#" class="link">Acerca de nosotros!!</a></li>
                 </ul>
             </div>
-
-
+            <button id="btnDelete"></button>
             <!-- Botones de acceso y registro -->
             <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="login()">Acceder</button>
@@ -70,18 +69,11 @@
                     <header>Login</header>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
                 <!-- Campos de entrada de datos -->
                 <div>
+                    <button id="btnDeleteAll" style="display: none;"></button>
+                    <button id="frmBuscar" style="display: none;"></button>
+                    <button id="btnMostrar" style="display: none;"></button>
                     <form id="frmDatosPersonales"></form>
                     <form id="loginForm" method="post">
                         <div class="input-box" id="loginResponse"></div> <!-- Mover aquí -->
@@ -101,13 +93,6 @@
                         </div>
                     </form>
                 </div>
-
-
-
-
-
-
-
                 <!-- Opciones adicionales -->
 
                 <div class="two-col">
@@ -120,8 +105,9 @@
                     </div>
                 </div>
             </div>
-
+            <label id="responsInformation" style="display: none;"></label>
             <!--  =========================== Formulario de registro =========================== -->
+            <!--    <label id="responsInformation" style="display: none;"></label>-->
             <div class="register-container" id="register">
                 <!-- Encabezado y enlace para inicio de sesión -->
                 <div class="top">
