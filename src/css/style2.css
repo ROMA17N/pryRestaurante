@@ -39,16 +39,11 @@ body {
 
 .btn.white-btn {
   background: rgba(255, 255, 255, 0.7);
-<<<<<<< HEAD
-=======
-  margin: 30%;
->>>>>>> d73178735f6f69e2993184ec681fbeda19496957
   margin-top: -4%;
 }
 
 .form {
   background: rgba(255, 255, 255, 0.637);
-  margin-top: -7%;
 }
 
 .cuerpoT {
@@ -131,7 +126,6 @@ body {
 
 #valoresTabla {
   display: none;
-<<<<<<< HEAD
 }
 
 /* Estilos opcionales para el gif */
@@ -139,6 +133,3 @@ body {
     width: 30%;
     margin: .5%;
 }
-=======
-}
->>>>>>> d73178735f6f69e2993184ec681fbeda19496957

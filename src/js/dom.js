@@ -287,7 +287,6 @@ document.getElementById('btnDelete').addEventListener('click', (event) => {
                 if (confirm('Estas seguro de borrar a la persona en la BD?')) {
                         if (db.length === 1) {
                                 objDataManager.deleteAll();
-                                ocultarTabla();
                         } else {
                                 objDataManager.deletePerson(IdExixtente);
                         }
@@ -301,6 +300,7 @@ document.getElementById('btnDelete').addEventListener('click', (event) => {
         }
         // ----------------------------------------
         // limpar los campos del formulario
+        ocultarTabla();
         document.querySelector("#frmDelete").reset();
 
 });
@@ -445,6 +445,7 @@ function mostrarFormulario(opcion) {
                 document.getElementById('frmMostrar').style.display = 'block';
 
         } else if (opcion === 'buscar') {
+                ocultarTabla();
                 document.getElementById('Buscar').style.display = 'block';
                 document.getElementById('valoresTa').style.display = 'none';
         } else if (opcion === 'eliminar') {
@@ -459,6 +460,7 @@ function mostrarFormulario(opcion) {
                         mostrarAlerta('No hay informacion en la base de datos', 'alert alert-danger');
                         mostrarGii();
                 }
+                ocultarTabla();
         } else if (opcion === 'eliminarId') {
                 document.getElementById('eliminarId').style.display = 'block';
         }

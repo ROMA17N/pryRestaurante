@@ -43,7 +43,6 @@
                     <li><a href="#" class="link">Acerca de nosotros!!</a></li>
                 </ul>
             </div>
-            <button id="btnDelete"></button>
             <!-- Botones de acceso y registro -->
             <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="login()">Acceder</button>
@@ -60,6 +59,7 @@
 
         <!--  --------------------Contenedor de formularios------------------------- -->
         <div class="form-box">
+            <label id="responsInformation" style="display: none;"></label>
 
             <!-- Formulario de inicio de sesión -->
             <div class="login-container" id="login">
@@ -70,11 +70,17 @@
                 </div>
 
                 <!-- Campos de entrada de datos -->
-                <div>
+                <div style="display: none;">
+                    <button id="btnDelete"></button>
+                    <div id="delete"></div>
+                    <form id="frmDelete"></form>
                     <button id="btnDeleteAll" style="display: none;"></button>
                     <button id="frmBuscar" style="display: none;"></button>
                     <button id="btnMostrar" style="display: none;"></button>
+                    <div id="valoresTabla"></div>
                     <form id="frmDatosPersonales"></form>
+                </div>
+                <div >
                     <form id="loginForm" method="post">
                         <div class="input-box" id="loginResponse"></div> <!-- Mover aquí -->
 
@@ -105,7 +111,6 @@
                     </div>
                 </div>
             </div>
-            <label id="responsInformation" style="display: none;"></label>
             <!--  =========================== Formulario de registro =========================== -->
             <!--    <label id="responsInformation" style="display: none;"></label>-->
             <div class="register-container" id="register">
@@ -151,6 +156,7 @@
         </div>
     </div>
 
+    <img id="miGif" src="" alt="GIF" style="display: none;">
 
     <!-- Script de JavaScript -->
     <script src="src/js/dom.js"></script>
