@@ -34,17 +34,32 @@ class DataManager {
                 sessionStorage.setItem(this.keySession, JSON.stringify(collection));
         }
 
+<<<<<<< HEAD
+=======
+        //delete
+
+        //delete All
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         deleteAll() {
                 sessionStorage.clear(this.keySession);
                 this.dbSession = [];
         }
 
         deletePerson(index) {
+<<<<<<< HEAD
+=======
+                //                this.dbSession.splice(id,1);
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
                 this.dbSession.splice(index, 1);
                 //sessionStorage.removeItem(id);
                 // Actualizar la sesión de almacenamiento con la versión actualizada de this.dbSession
                 sessionStorage.setItem(this.keySession, JSON.stringify(this.dbSession));
         }
+<<<<<<< HEAD
+=======
+        //fiIndex para buscar y eliminar la posicion
+        //.splice se lo mandamos a la BD y con .splice y con cuantas posiciones y de nuevo un set item para guardar los datos
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 }
 
 const objDataManager = new DataManager('persona');
@@ -65,6 +80,19 @@ frmDatosPersonales.addEventListener("submit", function (event) {
         const { value: nacionalidad } = document.getElementById("txtNacionalidad");
         const { value: ocupacion } = document.querySelector(`input[name="txtOcupacion"]:checked`);
         const { value: fecha } = document.getElementById("txtFecha");
+<<<<<<< HEAD
+=======
+        /*
+                const txtNombre = document.getElementById("txtNombre").value;
+                const txtApellidos = document.querySelector("#txtApellidos").value;
+                const txtEdad = document.getElementById("txtEdad").value;
+                const txtNacionalidad = document.getElementById("txtNacionalidad").value;
+                const txtOcupacion = document.querySelector(`input[name="txtOcupacion"]:checked`).value;
+                const txtFecha = document.getElementById("txtFecha").value;
+        */
+        /*------------------------------------------------------------------------
+        */
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 
         const dbSession = objDataManager.read();
         //validar que la base de taros tenga informaction
@@ -84,6 +112,7 @@ frmDatosPersonales.addEventListener("submit", function (event) {
 
         // limpar los campos del formulario
         document.querySelector("#frmDatosPersonales").reset();
+<<<<<<< HEAD
 
 });
 function mostrarAlerta(mensaje, alerta) {
@@ -102,6 +131,104 @@ function mostrarAlerta(mensaje, alerta) {
         }, 2000);
 };
 
+=======
+        /*
+                //crear Fila
+                const fila = document.createElement("tr");
+        
+                //crear celdas
+                const celdaNumero = document.createElement("td");
+                const celdaNombre = document.createElement("td");
+                const celdaApellidos = document.createElement("td");
+                const celdaEdad = document.createElement("td");
+                const celdaAcciones = document.createElement("td");
+                const celdaNacionalidad = document.createElement("td")
+                const celdaOcupacion = document.createElement("td");
+                const celdaFecha = document.createElement("td");
+        
+                const divBotones = createBotones();
+                //Aniadir en las celdad valores de las cajas de texto
+                celdaNumero.textContent = contador;
+                celdaNombre.textContent = txtNombre;
+                celdaApellidos.textContent = txtApellidos;
+                celdaEdad.textContent = txtEdad;
+                celdaNacionalidad.textContent = txtNacionalidad;
+                celdaOcupacion.textContent = txtOcupacion;
+                celdaFecha.textContent = txtFecha;
+                celdaAcciones.appendChild(divBotones);
+        
+                //Aniadir las celdas a la fila 
+                fila.appendChild(celdaNumero);
+                fila.appendChild(celdaNombre);
+                fila.appendChild(celdaApellidos);
+                fila.appendChild(celdaEdad);
+                fila.appendChild(celdaNacionalidad);
+                fila.appendChild(celdaOcupacion);
+                fila.appendChild(celdaFecha);
+                fila.appendChild(celdaAcciones);
+        
+        
+                //Agregar la fila al cuerpo de la tabla
+                document.getElementById("cuerpoTabla").appendChild(fila);
+                //limpiar el formulario
+                document.querySelector("#frmDatosPersonales").reset();
+                contador++;
+                */
+
+});
+/*
+document.getElementById('btnMostrar').addEventListener('click', function () {
+        const dbPersona = objDataManager.read();
+
+        if (dbPersona.length !== 0) {
+                const divTabla = document.getElementById('valoresTabla');
+                divTabla.style.display = "block";
+                document.getElementById("cuerpoTabla").textContent = "";
+
+                for (const persona of dbPersona) {
+                        // crear una nueva fila
+                        const fila = document.createElement('tr');
+
+                        const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
+                                const celda = document.createElement('td');
+                                celda.textContent = persona[propiedad];
+                                return celda;
+                        });
+
+                        const celdaAcciones = document.createElement('td');
+                        const divBotones = crearBotones();
+                        // Añadimos los botones a las celdas
+                        celdaAcciones.appendChild(divBotones);
+
+                        fila.append(...celdas, celdaAcciones);
+
+                        // agregar la fila a la tabla
+
+                        document.getElementById("cuerpoTabla").appendChild(fila);
+
+                }
+        } else {
+                mostrarAlerta('La base de datos esta vacia!!', 'alert alert-danger')
+        }
+});
+*/
+function mostrarAlerta(mensaje, alerta) {
+        const divResponsInformation = document.getElementById('responsInformation');
+        divResponsInformation.textContent = mensaje;
+        divResponsInformation.className = alerta;
+        divResponsInformation.style.display = 'block';
+        divResponsInformation.classList.add('fade-in');
+
+        setTimeout(() => {
+                divResponsInformation.classList.add("fade-out");
+                setTimeout(() => {
+                        divResponsInformation.style.display = 'none';
+                        divResponsInformation.classList.remove('fade-in', 'fade-out');
+                }, 1000);
+        }, 2000);
+};
+
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 function crearBotones() {
         const divBotones = document.createElement("div");
         divBotones.className = "bnt-group";
@@ -109,6 +236,26 @@ function crearBotones() {
         const btnEliminar = crearBoton('src/assets/delete.png', 'Eliminar', 1, () => { });
         const btnAceptar = crearBoton('src/assets/cheked.png', 'Aceptar', 2, () => { });
 
+<<<<<<< HEAD
+=======
+        /*
+        const btnEditar = document.createElement("button");
+        const btnEliminar = document.createElement("button");
+        const btnAceptar = document.createElement("button");
+        btnEditar.className = "btn btn-primary";
+        btnEliminar.className = "btn btn-danger";
+        btnAceptar.className = "btn btn-success";
+        
+
+        btnEditar.innerHTML = "<img src='src/assets/edit.png'>";
+        btnEliminar.innerHTML = "<img src='src/assets/delete.png'>";
+        btnAceptar.innerHTML = "<img src='src/assets/check.png'>";
+
+        divBotones.appendChild(btnEditar);
+        divBotones.appendChild(btnEliminar);
+        divBotones.appendChild(btnAceptar);
+*/
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         const imgAceptar = document.createElement("img");
         imgAceptar.src = "src/assets/cheked.png";
         imgAceptar.alt = "Aceptar";
@@ -173,7 +320,33 @@ function crearBotones() {
                         btnAceptar.disabled = true;
                         btnEliminar.disabled = false;
                         btnEditar.disabled = false;
+<<<<<<< HEAD
+=======
+                }/*
+                filaEditar = null;
+                btnAceptar.disabled = true;
+                btnEditar.disabled = false;
+                btnEliminar.disabled = false;*/
+        });
+
+
+        btnEliminar.addEventListener("click", function () {
+                const db = objDataManager.read();
+                const filaEliminar = this.closest("tr");
+                console.log(filaEliminar.cells[0].textContent);
+                //-------------------------------------
+                const IdExixtente = db.findIndex(clavePersona => clavePersona.idPersona == filaEliminar.cells[0].textContent);
+                if (db.length === 1) {
+                        objDataManager.deleteAll();
+                        ocultarTabla();
+                } else {
+                        objDataManager.deletePerson(IdExixtente);
+                        filaEliminar.remove();
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
                 }
+                mostrarAlerta('La persona se elimino correctamente!!', 'alert alert-success');
+                if (db.length === 0) { ocultarTabla(); mostrarAlerta('Base de datos Vacia!!', 'alert alert-success'); }
+
         });
 
 
@@ -226,6 +399,54 @@ function habilitarEdicion(fiaActual) {
         }
 }
 
+<<<<<<< HEAD
+=======
+/*
+
+document.getElementById('frmBuscar').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const idPersona = document.getElementById('txtIdPersona').value;
+        console.log(idPersona)
+
+        const dbSession = objDataManager.read();
+        //validar que la base de taros tenga informaction
+        //if
+        const datosPersona = buscarId(idPersona, dbSession);
+
+        if (datosPersona !== undefined) {
+                const divTabla = document.getElementById('valoresTabla');
+                divTabla.style.display = 'block';
+                document.getElementById('cuerpoTabla').textContent = "";
+                const fila = document.createElement('tr');
+
+                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
+                        const celda = document.createElement('td');
+                        celda.textContent = datosPersona[propiedad];
+                        return celda;
+                });
+
+                const celdaAcciones = document.createElement('td');
+                const divBotones = crearBotones();
+                // Añadimos los botones a las celdas
+                celdaAcciones.appendChild(divBotones);
+
+                fila.append(...celdas, celdaAcciones);
+
+                // agregar la fila a la tabla
+
+                document.getElementById("cuerpoTabla").appendChild(fila);
+
+
+        } else {
+                mostrarAlerta('No se encontro la persona', 'alert alert-danger');
+                ocultarTabla();
+        }
+        //else
+
+});
+*/
+
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 document.getElementById('frmBuscar').addEventListener('submit', (event) => {
         event.preventDefault();
         const idPersona = document.getElementById('txtIdPersona').value;
@@ -271,7 +492,24 @@ document.getElementById('frmBuscar').addEventListener('submit', (event) => {
         document.querySelector("#frmBuscar").reset();
 
 });
+<<<<<<< HEAD
 
+=======
+/*
+document.getElementById('btnDeleteAll').addEventListener('click', () => {
+        const db = objDataManager.read();
+        if (db.length !== 0) {
+                if (confirm('Estas seguro de borrar la BD?')) {
+                        objDataManager.deleteAll();
+                        ocultarTabla();
+                        mostrarAlerta('La BD ha sido eliminado etsitosamente!!', 'alert alert-success')
+                }
+        } else {
+                mostrarAlerta('No hay informacion en la base de datos', 'alert alert-danger');
+        }
+});
+*/
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 document.getElementById('btnDelete').addEventListener('click', (event) => {
         const db = objDataManager.read();
         //----------------------------------------
@@ -297,7 +535,10 @@ document.getElementById('btnDelete').addEventListener('click', (event) => {
                 }
         } else {
                 mostrarAlerta('No existe esta persona!!', 'alert alert-danger');
+<<<<<<< HEAD
                 mostrarGii();
+=======
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         }
         // ----------------------------------------
         // limpar los campos del formulario
@@ -381,16 +622,30 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         accessLogin.setAttribute("role", "alert");
 
         if (usuario === "admin@Admin.com" && contrasenia === "admin") {
+<<<<<<< HEAD
                 mostrarAlerta('Datos Correctos', 'alert alert-success')
+=======
+                accessLogin.textContent = "Datos Correctos";
+                accessLogin.classList.add("alert", "alert-success");
+                loginResponse.appendChild(accessLogin);
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
                 setTimeout(function () {
                         window.location.href = "dashboard.html";
                 }, 1000);  // Redirigir después de 2 segundos
         } else {
+<<<<<<< HEAD
                 mostrarAlerta('Datos Incorrectos', 'alert alert-danger')
+=======
+
+                accessLogin.textContent = "Datos Incorrectos";
+                accessLogin.classList.add("alert", "alert-danger");
+                loginResponse.appendChild(accessLogin);
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
                 document.getElementById("loginForm").reset();
         }
 });
 
+<<<<<<< HEAD
 function mostrarGii() {
         document.getElementById('miGif').style.display = 'block'
         const miGif = document.getElementById('miGif');
@@ -408,6 +663,40 @@ function mostrarFormulario(opcion) {
 
         if (opcion === 'agregar') {
                 document.getElementById('frmAgregar').style.display = 'block';
+=======
+/*
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevenir envío del formulario
+    
+        const usuario = document.getElementById("txtUsuario").value;
+        const contrasenia = document.getElementById("txtPass").value;
+    
+        if (usuario === "admin@Admin.com" && contrasenia === "admin") {
+            mostrarAlerta("Datos Correctos", "alert alert-success");
+            setTimeout(function () {
+                window.location.href = "dashboard.html";
+            }, 1000);  // Redirigir después de 2 segundos
+        } else {
+            mostrarAlerta("Datos Incorrectos", "alert alert-danger");
+            document.getElementById("loginForm").reset();
+        }
+    }); */
+
+
+
+/*
+
+
+function mostrarFormulario(opcion) {
+        document.getElementById('formularioAgregar').style.display = 'none';
+        document.getElementById('formularioMostrar').style.display = 'none';
+        document.getElementById('formularioBuscar').style.display = 'none';
+        document.getElementById('EliminarDB').style.display = 'none';
+        document.getElementById('formularioEliminarPersonaPorId').style.display = 'none';
+
+        if (opcion === 'agregar') {
+                document.getElementById('formularioAgregar').style.display = 'block';
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         } else if (opcion === 'mostrar') {
                 const dbPersona = objDataManager.read();
 
@@ -435,11 +724,96 @@ function mostrarFormulario(opcion) {
 
                                 // agregar la fila a la tabla
                                 document.getElementById("cuerpoTabla").appendChild(fila);
+<<<<<<< HEAD
                                 mostrarAlerta('Visualizacion exitosa', 'alert alert-success')
+=======
+                        }
+                } else {
+                        mostrarAlerta('La base de datos esta vacia!!', 'alert alert-danger')
+                }
+                document.getElementById('formularioMostrar').style.display = 'block';
+
+        } else if (opcion === 'buscar') {
+                document.getElementById('formularioBuscar').style.display = 'block';
+                //  } else if (opcion === 'EliminarDB') {
+
+        } else if (opcion === 'EliminarDB') {
+                const db = objDataManager.read();
+                if (db.length !== 0) {
+                        if (confirm('¿Estás seguro de borrar la BD?')) {
+                                objDataManager.deleteAll();
+                                ocultarTabla();
+                                // Creamos la alerta
+                                const alerta = document.createElement('div');
+                                alerta.className = 'alert alert-success';
+                                alerta.textContent = '¡La BD ha sido eliminada exitosamente!';
+                                // Agregamos la alerta al div 'EliminarDB'
+                                document.getElementById('EliminarDB').appendChild(alerta);
+                        }
+                } else {
+                        // Creamos la alerta
+                        const alerta = document.createElement('div');
+                        alerta.className = 'alert alert-danger';
+                        alerta.textContent = 'No hay información en la base de datos';
+                        // Agregamos la alerta al div 'EliminarDB'
+                        document.getElementById('EliminarDB').appendChild(alerta);
+                }
+                document.getElementById('EliminarDB').style.display = 'block';
+        } else if (opcion === 'eliminarPersonaPorId') {
+                document.getElementById('formularioEliminarPersonaPorId').style.display = 'block';
+                //  }
+
+
+        } else if (opcion === 'eliminarPersonaPorId') {
+                document.getElementById('formularioEliminarPersonaPorId').style.display = 'block';
+        }
+}
+*/
+
+
+function mostrarFormulario(opcion) {
+        document.getElementById('formularioAgregar').style.display = 'none';
+        document.getElementById('formularioMostrar').style.display = 'none';
+        document.getElementById('formularioBuscar').style.display = 'none';
+        document.getElementById('EliminarDB').style.display = 'none';
+        document.getElementById('formularioEliminarPersonaPorId').style.display = 'none';
+
+        if (opcion === 'agregar') {
+                document.getElementById('formularioAgregar').style.display = 'block';
+        } else if (opcion === 'mostrar') {
+                const dbPersona = objDataManager.read();
+
+                if (dbPersona.length !== 0) {
+                        const divTabla = document.getElementById('valoresTabla');
+                        divTabla.style.display = "block";
+                        document.getElementById("cuerpoTabla").textContent = "";
+
+                        for (const persona of dbPersona) {
+                                // crear una nueva fila
+                                const fila = document.createElement('tr');
+
+                                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
+                                        const celda = document.createElement('td');
+                                        celda.textContent = persona[propiedad];
+                                        return celda;
+                                });
+
+                                const celdaAcciones = document.createElement('td');
+                                const divBotones = crearBotones();
+                                // Añadimos los botones a las celdas
+                                celdaAcciones.appendChild(divBotones);
+
+                                fila.append(...celdas, celdaAcciones);
+
+                                // agregar la fila a la tabla
+                                document.getElementById("cuerpoTabla").appendChild(fila);
+                                mostrarAlerta('Visualizacion exitosa',  'alert alert-success')
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
 
                         }
                 } else {
                         mostrarAlerta('La base de datos esta vacia!!', 'alert alert-danger')
+<<<<<<< HEAD
                         mostrarGii();
                 }
                 document.getElementById('frmMostrar').style.display = 'block';
@@ -449,10 +823,20 @@ function mostrarFormulario(opcion) {
                 document.getElementById('valoresTa').style.display = 'none';
         } else if (opcion === 'eliminar') {
                 document.getElementById('eliminarBD').style.display = 'block';
+=======
+                }
+                document.getElementById('formularioMostrar').style.display = 'block';
+
+        } else if (opcion === 'buscar') {
+                document.getElementById('formularioBuscar').style.display = 'block';
+                document.getElementById('valoresTa').style.display = 'none';
+        } else if (opcion === 'EliminarDB') {
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
                 const db = objDataManager.read();
                 if (db.length !== 0) {
                         if (confirm('Estas seguro de borrar la BD?')) {
                                 objDataManager.deleteAll();
+<<<<<<< HEAD
                                 mostrarAlerta('La BD ha sido eliminado etsitosamente!!', 'alert alert-success');
                         }
                 } else {
@@ -461,6 +845,17 @@ function mostrarFormulario(opcion) {
                 }
         } else if (opcion === 'eliminarId') {
                 document.getElementById('eliminarId').style.display = 'block';
+=======
+                                ocultarTabla();
+                                mostrarAlerta('La BD ha sido eliminado etsitosamente!!', 'alert alert-success')
+                        }
+                } else {
+                        mostrarAlerta('No hay informacion en la base de datos', 'alert alert-danger');
+                }
+          document.getElementById('EliminarDB').style.display = 'block';
+        } else if (opcion === 'eliminarPersonaPorId') {
+                document.getElementById('formularioEliminarPersonaPorId').style.display = 'block';
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         }
 }
 

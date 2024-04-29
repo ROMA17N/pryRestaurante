@@ -35,18 +35,34 @@
           <a href="#" class="nav-link" onclick="mostrarFormulario('buscar')">Buscar Id Empleado</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
           <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar')">Eliminar Base de Datos</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId')">Elimina Persona por ID</a>
+=======
+          <a href="#" class="nav-link" onclick="mostrarFormulario('EliminarDB')">Eliminar Base de Datos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarPersonaPorId')">Elimina Persona por ID</a>
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
         </li>
       </ul>
     </label>
   </label>
+<<<<<<< HEAD
   <!-- --------------------------------------------------------- -->
 
   <section>
     <div id="frmAgregar" style="display: none;">
+=======
+
+
+  <!-- --------------------------------------------------------- -->
+
+  <section>
+    <div id="formularioAgregar" style="display: none;">
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
       <form id="frmDatosPersonales">
         <label class="marge">
           <label class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -97,6 +113,7 @@
         <div class="marge">
           <label class="shadow-lg p-3 mb-5 bg-body rounded">
             <h2 class="titles" id="txtOcupacion">Ocupacion:</h2>
+<<<<<<< HEAD
             <div class="form-check">
               <input class="form-check-input" type="radio" name="txtOcupacion" id="txtOcupacion" value="cocinero"
                 required>
@@ -142,17 +159,48 @@
     <div id="eliminarBD" style="display: none;"></div>
     <!-- =========================================    -->
     <div id="Buscar" style="display: none;">
+=======
+            <label><input type="checkbox" value="cocinero" id="txtOcupacion" name="txtOcupacion"> Cocinero</label
+              required><br>
+            <label><input type="checkbox" value="camarero" id="txtOcupacion" name="txtOcupacion"> Camarero</label><br>
+            <label><input type="checkbox" value="limpiador" id="txtOcupacion" name="txtOcupacion"> Limpiador</label><br>
+            <label><input type="checkbox" value="gerente" id="txtOcupacion" name="txtOcupacion"> Gerente</label><br>
+            <label><input type="checkbox" value="repartidor" id="txtOcupacion" name="txtOcupacion">
+              Repartidor</label><br>
+          </label>
+        </div>
+        <button type="submit" class="btn white-btn">Agregar Datos</button>
+        <div>
+
+
+        </div>
+      </form>
+    </div>
+
+    <div id="EliminarDB" style="display: none;"></div>
+    <!-- =========================================    -->
+    <div id="formularioBuscar" style="display: none;">
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
       <Form id="frmBuscar">
         <label class="marge">
           <label class="shadow-lg p-3 mb-5 bg-body rounded">
             <label for="txtIdPersona">Id Persona:</label>
             <input type="number" name="tftIdPersona" id="txtIdPersona" required>
           </label> <button type="submit" id="btnBuscar" class="btn white-btn"> Buscar por Id</button>
+<<<<<<< HEAD
         </label>
       </Form>
 
       <div id='valoresTa' class="form" style="display: none;">
         <table class="table">
+=======
+
+        </label>
+      </Form>
+      
+      <div id='valoresTa' class="form" style="display: none;"  >
+        <table class="table" >
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
           <thead>
             <tr>
               <th scope="col" class="cuerpoT">#Empleado</th>
@@ -165,6 +213,7 @@
               <th scope="col" class="cuerpoT">Acciones</th>
             </tr>
           </thead>
+<<<<<<< HEAD
           <tbody id="cuerpoTa" class="cuerpoT">
           </tbody>
         </table>
@@ -211,6 +260,56 @@
   <label id="responsInformation" style="display: none;"></label>
 
   <form id="loginForm"></form>
+=======
+          <tbody id="cuerpoTa" class="cuerpoT" >
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div id="formularioEliminarPersonaPorId" style="display: none;">
+      <Form id="frmDelete">
+        <label class="marge">
+          <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtDelete">Eliminar Persona por ID:</label>
+            <input type="number" name="delete" id="delete" required>
+          </div>
+          <button type="submit" id="btnDelete" class="btn white-btn"> Eliminar persona</button>
+        </label>
+        </label>
+      </Form>
+    </div>
+
+    <div id="responsInformation" style="display: none;"></div>
+
+    <!-- =========================================    -->
+    <div id="formularioMostrar" style="display: none;">
+      <div id='valoresTabla' style="background: rgba(255, 255, 255, 0.637);
+      ">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="cuerpoT">#Empleado</th>
+              <th scope="col" class="cuerpoT">Nombre Empleado</th>
+              <th scope="col" class="cuerpoT">Apellido Empleado</th>
+              <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Nacionalidad</th>
+              <th scope="col" class="cuerpoT">Ocupacion</th>
+              <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
+              <th scope="col" class="cuerpoT">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla" class="cuerpoT">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+  <form id="loginForm"></form>
+
+>>>>>>> d73178735f6f69e2993184ec681fbeda19496957
   <script src="src/js/dom.js"></script>
 </body>
 
