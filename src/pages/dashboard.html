@@ -12,8 +12,8 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!--Aqui aniadimos un icono a nuestra pagina-->
-  <link rel="icon" href="src/assets/Icono.png">
-  <link rel="stylesheet" href="src/css/style2.css" />
+  <link rel="icon" href="../assets/Icono.png">
+  <link rel="stylesheet" href="../css/style2.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -25,24 +25,29 @@
     <label class="shadow-lg p-3 mb-5 bg-body rounded">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" onclick="mostrarFormulario('agregar')">Agregar
+          <a class="nav-link active" aria-current="page" href="#"
+            onclick="mostrarFormulario('agregar', window.objDataManager)">Agregar Empleado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar', window.objDataManager)">Mostrar
+            Empleados</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar', window.objDataManager)">Buscar Id
             Empleado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar')">Mostrar Empleados</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar', window.objDataManager)">Eliminar Base de
+            Datos</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar')">Buscar Id Empleado</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar')">Eliminar Base de Datos</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId')">Elimina Persona por ID</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId', window.objDataManager)">Elimina Persona
+            por ID</a>
         </li>
       </ul>
     </label>
   </label>
+
   <!-- --------------------------------------------------------- -->
 
   <section>
@@ -177,12 +182,11 @@
           <div class="shadow-lg p-3 mb-5 bg-body rounded">
             <label for="txtDelete">Eliminar Persona por ID:</label>
             <input type="number" name="delete" id="delete" required>
-          </div>
-          <button type="submit" id="btnDelete" class="btn white-btn"> Eliminar persona</button>
-        </label>
+          </div><button type="submit" id="btnDelete" class="btn white-btn"> Eliminar persona</button>
         </label>
       </Form>
     </div>
+
     <!-- =========================================    -->
     <div id="frmMostrar" style="display: none;">
       <div id='valoresTabla' style="background: rgba(255, 255, 255, 0.637);">
@@ -205,13 +209,74 @@
       </div>
     </div>
 
-    <img id="miGif" src="" alt="GIF" style="display: none;">
 
   </section>
   <label id="responsInformation" style="display: none;"></label>
-
   <form id="loginForm"></form>
-  <script src="src/js/dom.js"></script>
+
+
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../assets/plat2.jpeg" class="d-block w-100" alt="plat2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/plat3.jpeg" class="d-block w-100" alt="plat3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/plat4.webp" class="d-block w-100" alt="plat4">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <script type="module" src="../js/dom.js"></script>
+  <script src="../js/funciones.js"> </script>
+
+  <script type="module">import { DataManager } from "../js/DataManager.js";
+
+    // Crear objDataManager
+    let objDataManager = new DataManager('persona');
+
+
+    // Adjuntar objDataManager al objeto global window
+    window.objDataManager = objDataManager;
+  </script>
+
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Bootstrap Bundle with Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

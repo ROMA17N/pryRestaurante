@@ -129,7 +129,16 @@ body {
 }
 
 /* Estilos opcionales para el gif */
-#miGif {
-    width: 30%;
-    margin: .5%;
+#miContenedor {
+  width: 10%;
+}
+
+#carouselExampleCaptions {
+  max-width: 45%; /* Ancho máximo del carrusel */
+  margin: 0 auto; /* Centrar horizontalmente el carrusel */
+}
+
+#carouselExampleCaptions img {
+  max-width: 100%; /* Ajustar el ancho máximo de las imágenes al 100% del contenedor */
+  height: auto; /* Permitir que la altura se ajuste automáticamente para mantener la proporción */
 }
