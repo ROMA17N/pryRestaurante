@@ -25,28 +25,24 @@
     <label class="shadow-lg p-3 mb-5 bg-body rounded">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"
-            onclick="mostrarFormulario('agregar', window.objDataManager)">Agregar Empleado</a>
+          <a class="nav-link active" aria-current="page" href="#" onclick="mostrarFormulario('agregar', window.objDataManager)">Agregar Empleado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar', window.objDataManager)">Mostrar
-            Empleados</a>
+          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar', window.objDataManager)">Mostrar Empleados</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar', window.objDataManager)">Buscar Id
-            Empleado</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar', window.objDataManager)">Buscar Id Empleado</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar', window.objDataManager)">Eliminar Base de
-            Datos</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar', window.objDataManager)">Eliminar Base de Datos</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId', window.objDataManager)">Elimina Persona
-            por ID</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId', window.objDataManager)">Eliminar Persona por ID</a>
         </li>
       </ul>
     </label>
   </label>
+  
 
   <!-- --------------------------------------------------------- -->
 
@@ -258,18 +254,9 @@
     </button>
   </div>
   <!-- ----------------------------------------------------------------------------------------------------------- -->
-  <script type="module" src="../js/dom.js"></script>
+  <script type="module" src="../js/dom.js"> </script>
   <script src="../js/funciones.js"> </script>
 
-  <script type="module">import { DataManager } from "../js/DataManager.js";
-
-    // Crear objDataManager
-    let objDataManager = new DataManager('persona');
-
-
-    // Adjuntar objDataManager al objeto global window
-    window.objDataManager = objDataManager;
-  </script>
 
 
   <!-- jQuery -->

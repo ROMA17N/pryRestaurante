@@ -55,6 +55,7 @@ class DataManager {
 import { persona as persona } from "./Persona.js";
 import { DataManager } from "./DataManager.js";
 let objDataManager = new DataManager('persona');
+window.objDataManager = objDataManager;
 
 //------------------------------------------------------------------------------------------------------------
 //Crear elementos HTML

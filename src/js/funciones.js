@@ -350,6 +350,7 @@ function mostrarGii() {
 };
 
 //mostrarGii();
+//let objDataManager = window.objDataManager;
 
 function mostrarFormulario(opcion, objDataManager) {
     console.log(opcion)
