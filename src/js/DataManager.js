@@ -1,10 +1,4 @@
-//Toda duncion que otro documento lo pueda leer se le pone export
-/*
-export const multiplicacion = (array, multiplicador) => {
-    return arrayNumbers.map((valores)=> valores * multiplicador);
-}
-export const sumDosNumerosB = (a, b) => { return a + b};
-*/
+
 export class DataManager {
     constructor(keySession) {
             this.keySession = keySession;
