@@ -25,24 +25,36 @@
     <label class="shadow-lg p-3 mb-5 bg-body rounded">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" onclick="mostrarFormulario('agregar', window.objDataManager)">Agregar Empleado</a>
+          <a class="nav-link active" aria-current="page" href="#"
+            onclick="mostrarFormulario('agregar', window.objDataManager)">Agregar Empleado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar', window.objDataManager)">Mostrar Empleados</a>
+          <a class="nav-link" href="#" onclick="mostrarFormulario('mostrar', window.objDataManager)">Mostrar
+            Empleados</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar', window.objDataManager)">Buscar Id Empleado</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('buscar', window.objDataManager)">Buscar Id
+            Empleado</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar', window.objDataManager)">Eliminar Base de Datos</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminar', window.objDataManager)">Eliminar Base de
+            Datos</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId', window.objDataManager)">Eliminar Persona por ID</a>
+          <a href="#" class="nav-link" onclick="mostrarFormulario('eliminarId', window.objDataManager)">Eliminar Persona
+            por ID</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" onclick="mostrarFormulario('exportPDF', window.objDataManager)">Exportar a
+            PDF</a>
+          <label for="txtURLimg">URL imágen:</label>
+          <input type="url" name="txtURLimg" id="txtURLimg" value="../assets/icon.webp">
+
         </li>
       </ul>
     </label>
   </label>
-  
+
 
   <!-- --------------------------------------------------------- -->
 
@@ -226,7 +238,8 @@
         <img src="../assets/plat2.jpeg" class="d-block w-100" alt="plat2">
         <div class="carousel-caption d-none d-md-block">
           <h4>DeliTic´s</h4>
-          <p>La cocina es un lenguaje mediante el cual se puede expresar armonía, felicidad, belleza, poesía, complejidad, magia, humor, provocación, cultura</p>
+          <p>La cocina es un lenguaje mediante el cual se puede expresar armonía, felicidad, belleza, poesía,
+            complejidad, magia, humor, provocación, cultura</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -240,7 +253,9 @@
         <img src="../assets/plat4.webp" class="d-block w-100" alt="plat4">
         <div class="carousel-caption d-none d-md-block">
           <h4>DeliTic´s</h4>
-          <p>La gente decía "Haces cosas muy raras" y yo les contestaba "Me dedico a la creatividad". A veces hemos querido explicar demasiado la cocina de vanguardia cuando quizá es muy difícil de explicar. Hay que vivirla</p>
+          <p>La gente decía "Haces cosas muy raras" y yo les contestaba "Me dedico a la creatividad". A veces hemos
+            querido explicar demasiado la cocina de vanguardia cuando quizá es muy difícil de explicar. Hay que vivirla
+          </p>
         </div>
       </div>
     </div>
@@ -252,7 +267,18 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+     <!-- Floater del restaurante -->
+  <div class="floater">
+    <img src="../assets/Icon.webp" alt="Logo del Restaurante">
+    <h3>¡Bienvenido a DeliTic's!</h3>
+    <p>Disfruta de la mejor cocina internacional en un ambiente acogedor y con un servicio excepcional.</p>
+    <button class="btn btn-primary">Reservar ahora</button>
   </div>
+  </div>
+
+ 
+
+
   <!-- ----------------------------------------------------------------------------------------------------------- -->
   <script type="module" src="../js/dom.js"> </script>
   <script src="../js/funciones.js"> </script>
@@ -263,6 +289,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Bootstrap Bundle with Popper.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <!-- librerias  utilizadas para generar formatos la manera 1.3.5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+    integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.js"
+    integrity="sha512-xn2o9RVB1RNMlahbzLIczHwL2RxT91DMmYdG8QI2/noMAh9zoyzGeJYT/TKkAPXVw/IrnP+k+4GE52PVsGRV9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+    integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
 
 </body>
 
