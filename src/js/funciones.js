@@ -112,7 +112,7 @@ function mostrarFormulario(opcion, objDataManager) {
                 // crear una nueva fila
                 const fila = document.createElement('tr');
 
-                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
+                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "sueldo", "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
                     const celda = document.createElement('td');
                     celda.textContent = persona[propiedad];
                     return celda;
@@ -179,7 +179,7 @@ async function exportPDF() {
 
         //Recuperar datos del local Storage
         const personas = objDataManager.read();
-        const datosTabla = personas.map(persona => [persona.idPersona, persona.nombre, persona.apellidos, persona.edad, persona.nacionalidad, persona.ocupacion, persona.fecha]);
+        const datosTabla = personas.map(persona => [persona.idPersona, persona.nombre, persona.apellidos, persona.edad, persona.sueldo, persona.nacionalidad, persona.ocupacion, persona.fecha]);
         // console.log(datosTabla);
         //console.log(datosTabla);
         const options = {
@@ -201,14 +201,14 @@ async function exportPDF() {
             autoSize: true
         };
         doc.autoTable({
-            head: [['ID', 'NOMBRE', 'APELLIDOS', 'EDAD', 'NACIONALIDAD', 'OCUPACION', 'FECHA DE ACTUALIZACION DE DATOS']],
+            head: [['ID', 'NOMBRE', 'APELLIDOS', 'EDAD', 'SUELDO', 'NACIONALIDAD', 'OCUPACION', 'FECHA DE ACTUALIZACION DE DATOS']],
             body: datosTabla,
             ...options,
             didParseCell: function (data) {
                 if (data.section !== 'Head' && data.column.index === 3) {
-                    const edad = parseFloat(data.cell.raw);
-                    if (!isNaN(edad)) {
-                        const formatoMoneda = '$' + edad.toFixed(2);
+                    const sueldo = parseFloat(data.cell.raw);
+                    if (!isNaN(sueldo)) {
+                        const formatoMoneda = '$' + sueldo.toFixed(2);
                         data.cell.text = formatoMoneda;
                     }
                 }

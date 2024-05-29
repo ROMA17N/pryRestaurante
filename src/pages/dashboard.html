@@ -63,7 +63,7 @@
       <form id="frmDatosPersonales">
         <label class="marge">
           <label class="shadow-lg p-3 mb-5 bg-body rounded">
-            <label for="inPersona">Id</label>
+            <label for="idPersona">Id</label>
             <input type="idPersona" name="idPersona" id="idPersona" required>
           </label>
         </label>
@@ -106,7 +106,12 @@
               <input type="date" name="txtFecha" id="txtFecha">
             </label>
           </label>
+          <label class="shadow-lg p-3 mb-5 bg-body rounded">
+            <label for="txtSueldo">Sueldo del Empleado:</label>
+            <input type="number" id="txtSueldo" name="txtSueldo" step="0.01" required>
+          </label>
         </div>
+
         <div class="marge">
           <label class="shadow-lg p-3 mb-5 bg-body rounded">
             <h2 class="titles" id="txtOcupacion">Ocupacion:</h2>
@@ -142,13 +147,12 @@
               </label required>
             </div>
           </label>
+        </div>
 
-        </div>
         <button type="submit" class="btn white-btn">Agregar Datos</button>
-        <div>
-        </div>
-      </form>
-      <form id="loginForm"></form>
+    </div>
+    </form>
+    <form id="loginForm"></form>
 
     </div>
 
@@ -172,10 +176,12 @@
               <th scope="col" class="cuerpoT">Nombre Empleado</th>
               <th scope="col" class="cuerpoT">Apellido Empleado</th>
               <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Sueldo</th>
               <th scope="col" class="cuerpoT">Nacionalidad</th>
               <th scope="col" class="cuerpoT">Ocupacion</th>
               <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
               <th scope="col" class="cuerpoT">Acciones</th>
+
             </tr>
           </thead>
           <tbody id="cuerpoTa" class="cuerpoT">
@@ -205,6 +211,7 @@
               <th scope="col" class="cuerpoT">Nombre Empleado</th>
               <th scope="col" class="cuerpoT">Apellido Empleado</th>
               <th scope="col" class="cuerpoT">Edad Empleado</th>
+              <th scope="col" class="cuerpoT">Sueldo</th>
               <th scope="col" class="cuerpoT">Nacionalidad</th>
               <th scope="col" class="cuerpoT">Ocupacion</th>
               <th scope="col" class="cuerpoT">Actualizacion de Datos</th>
@@ -267,16 +274,16 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-     <!-- Floater del restaurante -->
-  <div class="floater">
-    <img src="../assets/Icon.webp" alt="Logo del Restaurante">
-    <h3>¡Bienvenido a DeliTic's!</h3>
-    <p>Disfruta de la mejor cocina internacional en un ambiente acogedor y con un servicio excepcional.</p>
-    <button class="btn btn-primary">Reservar ahora</button>
-  </div>
+    <!-- Floater del restaurante -->
+    <div class="floater">
+      <img src="../assets/Icon.webp" alt="Logo del Restaurante">
+      <h3>¡Bienvenido a DeliTic's!</h3>
+      <p>Disfruta de la mejor cocina internacional en un ambiente acogedor y con un servicio excepcional.</p>
+      <button class="btn btn-primary">Reservar ahora</button>
+    </div>
   </div>
 
- 
+
 
 
   <!-- ----------------------------------------------------------------------------------------------------------- -->

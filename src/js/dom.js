@@ -4,7 +4,6 @@ let objDataManager = new DataManager('persona');
 window.objDataManager = objDataManager;
 
 const frmDatosPersonales = document.getElementById("frmDatosPersonales");
-let contador = 1;
 
 frmDatosPersonales.addEventListener("submit", function (event) {
 
@@ -13,17 +12,18 @@ frmDatosPersonales.addEventListener("submit", function (event) {
         const { value: idPersona } = document.getElementById("idPersona");
         const { value: nombre } = document.getElementById("txtNombre");
         const { value: apellidos } = document.getElementById("txtApellidos");
-        const { value: edad } = document.getElementById("txtEdad");
         const { value: nacionalidad } = document.getElementById("txtNacionalidad");
-        const { value: ocupacion } = document.querySelector(`input[name="txtOcupacion"]:checked`);
         const { value: fecha } = document.getElementById("txtFecha");
+        const { value: edad } = document.getElementById("txtEdad");
+        const { value: sueldo } = document.getElementById('txtSueldo'); 
+        const { value: ocupacion } = document.querySelector(`input[name="txtOcupacion"]:checked`);
 
         const dbSession = objDataManager.read();
         //validar que la base de taros tenga informaction
         //if
         const IdExixtente = dbSession.some(clavePersona => clavePersona.idPersona === idPersona);
         if (!IdExixtente) {
-                const objPersona = new persona(idPersona, nombre, apellidos, edad, nacionalidad, ocupacion, fecha);
+                const objPersona = new persona(idPersona, nombre, apellidos, edad, sueldo, nacionalidad, ocupacion, fecha);
                 objDataManager.create(objPersona);
                 mostrarAlerta('los datos se registraron Exitosamente!!', 'alert alert-success');
 
@@ -49,7 +49,7 @@ document.getElementById('frmBuscar').addEventListener('submit', (event) => {
                 document.getElementById('cuerpoTa').textContent = "";
                 const fila = document.createElement('tr');
 
-                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
+                const celdas = ['idPersona', 'nombre', 'apellidos', 'edad', "sueldo", "nacionalidad", "ocupacion", "fecha"].map(propiedad => {
                         const celda = document.createElement('td');
                         celda.textContent = datosPersona[propiedad];
                         return celda;
@@ -296,7 +296,7 @@ function cuerpoT(doc) {
                 'restaurante y recomendaciones para futuras mejoras y capacitaciones.'
 
         ].join('\n');
-        
+
         doc.text(text, 35, 33);
 
 }
@@ -322,7 +322,7 @@ function grafica(doc, categoryCounts, chartPosX, charTposY, chartWidth, chartHei
                 const barHeight = (categoryCounts[category] / maxCount) * chartHeight;
                 console.log('categoryCounts', categoryCounts[category], 'maxCount', maxCount, 'chartHeight', chartHeight)
 
-                const color = categoryColors[category];// Recuperamos el nomero de 
+                const color = categoryColors[category];// Recuperamos el nomero de
                 console.log(color)
                 doc.setFillColor(color[0], color[1], color[2], color[3], color[4]);
                 doc.rect(currentBarX, charTposY, barWhidth, -barHeight, 'F')
