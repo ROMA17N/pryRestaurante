@@ -205,7 +205,7 @@ async function exportPDF() {
             body: datosTabla,
             ...options,
             didParseCell: function (data) {
-                if (data.section !== 'Head' && data.column.index === 3) {
+                if (data.section !== 'Head' && data.column.index === 4) {
                     const sueldo = parseFloat(data.cell.raw);
                     if (!isNaN(sueldo)) {
                         const formatoMoneda = '$' + sueldo.toFixed(2);
@@ -224,6 +224,7 @@ async function exportPDF() {
                 categoryCounts[persona.ocupacion] = 1;
             }
         }
+        console.log('CategoriCoint !!!'+categoryCounts)
 
         doc.addPage();
         encabezado(doc, datosImg);
@@ -232,13 +233,13 @@ async function exportPDF() {
         const charTposY = 200; //Margen superior hasta el inicio de la pagina
         const chartWidth = 180; //Ancho de la grafica
         const chartHeight = 100; //altura de la grafica
-        const barSpacing = 5; //espaciado
+        const barSpacing = 5; //espaciado   
 
         grafica(doc, categoryCounts, chartPosX, charTposY, chartWidth, chartHeight, barSpacing);
 
         //Estilo para pie de pagina
         doc.setFont('Helvetica', 'Bold');
-        doc.setFontSize(10);
+        doc.setFontSize(10);    
         doc.setTextColor(16, 106, 234);
         const totalPaginas = doc.internal.getNumberOfPages();
 
@@ -315,7 +316,7 @@ function grafica(doc, categoryCounts, chartPosX, charTposY, chartWidth, chartHei
         camarero: [207, 16, 234],
         limpiador: [207, 16, 234],
         gerente: [16, 234, 74],
-        reepartidor: [134, 2, 58]
+        repartidor: [134, 2, 58]
     };
     //Determina el ancho de la barra
     const barWhidth = (chartWidth - (barSpacing * (Object.keys(categoryCounts).length - 1))) / Object.keys(categoryCounts).length;
